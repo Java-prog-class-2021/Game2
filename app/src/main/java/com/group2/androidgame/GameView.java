@@ -1,17 +1,20 @@
 package com.group2.androidgame;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     MainThread thread;
-
-
-
+    private final Bitmap shipSprite = BitmapFactory.decodeResource(getResources(), R.drawable.c4e00eb892e1f27);
     public GameView(Context context) {
         super(context);
         getHolder().addCallback(this);
@@ -29,7 +32,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             canvas.drawColor(Color.WHITE);
             Paint paint = new Paint();
             paint.setColor(Color.rgb(250, 0, 0));
-            canvas.drawRect(100, 100, 200, 200, paint);
+            canvas.drawBitmap(shipSprite, 200, 200, null);
         }
     }
 
