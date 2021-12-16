@@ -18,6 +18,9 @@ gradle-app.setting
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+##This file says that it should be added to gitignore.
+local.properties
+
 ###### The rest is from Java gitignore
 *.bin
 *.lock
