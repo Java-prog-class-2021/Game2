@@ -13,10 +13,11 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     MainThread thread;
     int x = 440, y = 860;
-    private final Bitmap shipSprite = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.draw), 200, 200, false);
+    private final Bitmap shipSprite = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.c4e00eb892e1f27), 200, 200, false);
     public GameView(Context context) {
         super(context);
         getHolder().addCallback(this);
@@ -35,6 +36,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             Paint paint = new Paint();
             paint.setColor(Color.rgb(250, 0, 0));
             canvas.drawBitmap(shipSprite, x, y, null); //hi
+
+
 
         }
     }
