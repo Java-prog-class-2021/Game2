@@ -19,7 +19,4 @@ public class Lasers {
     public void update () {
         y++;
     }
-    public void draw (Canvas canvas) {
-        canvas.drawBitmap(image, x, y, null);
-    }
 }

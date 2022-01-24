@@ -35,7 +35,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             Paint paint = new Paint();
             paint.setColor(Color.rgb(250, 0, 0));
             canvas.drawBitmap(shipSprite, x, y, null);
-
+            //test comment
         }
     }
 
