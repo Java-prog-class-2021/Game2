@@ -17,7 +17,8 @@ public class MainThread extends Thread {
         this.surfaceHolder = surfaceHolder;
     }
 
-    //Method uses some math to update roughly 60 times every second.
+    //Method uses some math to update the screen roughly 60 times every second,
+    //This smooths the animation to ~60 fps.
     @Override
     public void run() {
         long startTime;

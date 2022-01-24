@@ -13,7 +13,6 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     MainThread thread;
     int x = 440, y = 860;
@@ -35,10 +34,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             canvas.drawColor(Color.WHITE);
             Paint paint = new Paint();
             paint.setColor(Color.rgb(250, 0, 0));
-            canvas.drawBitmap(shipSprite, x, y, null); //hi
-
-
-
+            canvas.drawBitmap(shipSprite, x, y, null);
+            //test comment
         }
     }
 
@@ -72,7 +69,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public boolean onTouchEvent(MotionEvent event) {
             x = (int)event.getX()-100;
             y = (int)event.getY()-100;
-
 
             invalidate();
             return true;
