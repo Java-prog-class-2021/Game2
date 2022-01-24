@@ -70,7 +70,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             x = (int)event.getX()-100;
             y = (int)event.getY()-100;
 
-
             invalidate();
             return true;
     }
