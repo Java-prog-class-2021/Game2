@@ -1,6 +1,5 @@
 package com.group2.androidgame;
 
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 
@@ -18,7 +17,7 @@ public class Laser {
     public void draw (Canvas canvas) {
         canvas.drawBitmap(laserSprite, (int)posX, (int)posY, null);
     }
-    public void update(int pos) {
+    public void update() {
         posY-= 20;
         if (posY < -200 ) {
             GameView.laserList.remove(pos);

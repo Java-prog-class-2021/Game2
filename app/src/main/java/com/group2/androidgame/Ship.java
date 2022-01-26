@@ -6,14 +6,12 @@ import android.graphics.Canvas;
 public class Ship {
     private static Bitmap image;
     static double shipX, shipY;
-    int width, height;
+    static int width = 200, height = 200;
 
     Ship (Bitmap sprite) {
         image = sprite;
         shipX = 440;
         shipY = 860;
-        width = 100;
-        height = 100;
     }
 
     //draw and update methods

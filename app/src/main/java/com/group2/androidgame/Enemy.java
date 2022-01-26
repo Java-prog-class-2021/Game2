@@ -9,6 +9,7 @@ import androidx.constraintlayout.core.widgets.Rectangle;
 public class Enemy extends Rectangle {
     static private Bitmap enemySprite;
     double enemyX, enemyY;
+    static int width = 125, height = 125;
 
     Enemy(Bitmap sprite, double x, double y){
         enemySprite = sprite;
