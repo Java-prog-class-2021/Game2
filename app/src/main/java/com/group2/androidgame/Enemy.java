@@ -10,6 +10,6 @@ public class Enemy extends Rectangle {
         this.x =x;
         this.y = y;
         width = W;
-        height = H; //test
+        height = H;
     }
 }
