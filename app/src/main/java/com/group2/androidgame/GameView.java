@@ -16,9 +16,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     MainThread thread;
 
     //These are the sprites for the ship and lasers
-    private final Bitmap shipSprite = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.c4e00eb892e1f27), 200, 200, false);
-    private final Bitmap laserSprite = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.laser), 50, 100, false);
+    private final Bitmap shipSprite = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.spaceship), 200, 200, false);
+    private final Bitmap laserSprite = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.laser), 75, 150, false);
+    private final Bitmap asteroidSprite = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.asteroid), 160, 160, false);
     static ArrayList<Laser> laserList = new ArrayList<>();
+    static ArrayList<Enemy> enemyList = new ArrayList<>();
+
     Ship ship = new Ship(shipSprite);
 
     public GameView(Context context) {
@@ -28,12 +31,20 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         setFocusable(true);
     }
 
-    //Called by MainThread class, updates every ~60 times per second
+    //Called by MainThread class, updates every frame, about 60 times per second
     public void update() {
-        laserList.add(new Laser(laserSprite));
         for (Laser laser : laserList) {
-            laser.update();
+            laser.update(laserList.indexOf(laser));
         }
+        /*for (Enemy enemy : enemyList) {
+            enemy.update();
+        }*/
+    }
+
+    //things that need to happen every 10 frames, roughly once every tenth of a second
+    public void update10() {
+        laserList.add(new Laser(laserSprite));
+        //enemyList.add(new Enemy(asteroidSprite, 500, 0));
     }
 
     @Override
@@ -80,8 +91,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     //Ship follows where you touch on screen
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-            Ship.update(event.getX()-100, event.getY()-100);
+            Ship.update(event.getX()-ship.width, event.getY()-ship.height);
             invalidate();
             return true;
     }
+
+
 }

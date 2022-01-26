@@ -37,6 +37,10 @@ public class MainThread extends Thread {
                 canvas = this.surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
                     this.gameView.update();
+                    //call this method every 15 frames
+                    if (frameCount % 10 == 5) {
+                        this.gameView.update10();
+                    }
                     this.gameView.draw(canvas);
                 }
             } catch (Exception e) {

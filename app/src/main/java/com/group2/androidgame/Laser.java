@@ -18,10 +18,10 @@ public class Laser {
     public void draw (Canvas canvas) {
         canvas.drawBitmap(laserSprite, (int)posX, (int)posY, null);
     }
-    public void update() {
-        posY-= 10;
-        if (posY >= screenHeight) {
-            GameView.laserList.remove(this);
+    public void update(int pos) {
+        posY-= 20;
+        if (posY < -200 ) {
+            GameView.laserList.remove(pos);
         }
     }
 }
